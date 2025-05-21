@@ -1,7 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
-import { Image } from "react-native";
+import CategoryFilterScreen from "../screens/CategoryFilterScreen";
+import { Image, Text } from "react-native";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,20 @@ function HomeNavigator() {
               style={{ width: 70, height: 30 }}
               source={require("../../assets/logo.png")}
             />
+          ),
+        }}
+      />
+
+      <Stack.Screen
+        name="CategoryDetails"
+        component={CategoryFilterScreen}
+        options={{
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#5C3EBC" },
+          headerTitle: () => (
+            <Text style={{ fontWeight: "bold", fontSize: 15, color: "white" }}>
+              Ürünler
+            </Text>
           ),
         }}
       />
