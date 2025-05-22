@@ -3,9 +3,9 @@ export declare class Product {
   readonly image: string;
   readonly images: string[];
   readonly name: string;
-  readonly miktar: string;
-  readonly fiyat: number;
-  readonly fiyatIndirimli?: number;
+  readonly amount: string;
+  readonly price: number;
+  readonly cutPrice?: number;
 }
 
 export declare class Category {

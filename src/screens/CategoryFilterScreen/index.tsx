@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Text, ScrollView } from "react-native";
 import CategoryFilter from "../../components/categoryFilter";
+import ProductContainer from "../../components/productsContainer";
+import TypeFilter from "../../components/typeFilter";
 import { Category } from "../../models";
 
 function index(props) {
@@ -10,6 +12,8 @@ function index(props) {
   return (
     <ScrollView>
       <CategoryFilter category={category} />
+      <TypeFilter />
+      <ProductContainer />
     </ScrollView>
   );
 }
