@@ -2,6 +2,7 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View, Dimensions } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { Product } from "../../models";
+import { useNavigation } from "@react-navigation/native";
 
 const { height, width } = Dimensions.get("window");
 
@@ -10,8 +11,11 @@ type productItemType = {
 };
 
 function index({ item }: productItemType) {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity
+      onPress={() => navigation.navigate("ProductDetails", { product: item })}
       style={{
         width: width * 0.285,
         marginTop: 12,
@@ -57,7 +61,7 @@ function index({ item }: productItemType) {
           }}
         >
           <Text>{"\u20BA"}</Text>
-         {item.cutPrice}
+          {item.cutPrice}
         </Text>
       </View>
       <Text
@@ -67,7 +71,7 @@ function index({ item }: productItemType) {
           marginTop: 5,
         }}
       >
-       {item.name}
+        {item.name}
       </Text>
       <Text
         style={{
@@ -77,7 +81,7 @@ function index({ item }: productItemType) {
           fontWeight: "600",
         }}
       >
-       {item.amount}
+        {item.amount}
       </Text>
       <View
         style={{
