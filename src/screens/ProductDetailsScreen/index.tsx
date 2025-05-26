@@ -18,27 +18,27 @@ function index(props) {
   }
 
   return (
-      <ScrollView>
-        <ImageCarousel images={product.images || []} />
-        <DetailBox
-          price={product.price}
-          name={product.name}
-          amount={product.amount}
-        />
-        <Text
-          style={{
-            paddingHorizontal: 10,
-            paddingVertical: 13,
-            color: "#808B99",
-            fontWeight: "600",
-            fontSize: 14,
-          }}
-        >
-          Detaylar
-        </Text>
-        <ProductDetail />
-        <Button />
-      </ScrollView>
+    <ScrollView>
+      <ImageCarousel images={product.images || []} />
+      <DetailBox
+        price={product.price}
+        name={product.name}
+        amount={product.amount}
+      />
+      <Text
+        style={{
+          paddingHorizontal: 10,
+          paddingVertical: 13,
+          color: "#808B99",
+          fontWeight: "600",
+          fontSize: 14,
+        }}
+      >
+        Detaylar
+      </Text>
+      <ProductDetail />
+      <Button item={product} />
+    </ScrollView>
   );
 }
 

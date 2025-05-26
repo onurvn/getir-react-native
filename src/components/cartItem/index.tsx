@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Product } from "../../models";
+import { connect } from "react-redux";
+import * as actions from "../../redux/actions/cartActions";
 
 const { width, height } = Dimensions.get("window");
 
@@ -143,4 +145,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default index;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeFromCart: (product: Product) =>
+      dispatch(actions.removeFromCart(product)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(index);

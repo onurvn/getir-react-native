@@ -11,6 +11,7 @@ import Products from "../../../assets/data/products";
 import { Product } from "../../models";
 import ProductItem from "../../components/productItem";
 import CartItem from "../../components/cartItem";
+import { connect } from "react-redux";
 
 const { height, width } = Dimensions.get("window");
 
@@ -118,4 +119,11 @@ function index({
   );
 }
 
-export default index;
+const mapStateToProps = (state) => {
+  const { cartItems } = state;
+  return {
+    cartItems: cartItems,
+  };
+};
+
+export default connect(mapStateToProps, null)(index);

@@ -1,5 +1,8 @@
 import React from "react";
 import { View, Text, Dimensions, TouchableOpacity } from "react-native";
+import { connect } from "react-redux";
+import * as actions from "../../redux/actions/cartActions";
+import { Product } from "../../models";
 
 const { width, height } = Dimensions.get("window");
 
@@ -36,4 +39,11 @@ function index() {
   );
 }
 
-export default index;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItemToCart: (product: Product) =>
+      dispatch(actions.addToCart({ quantity: 1, product })),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(index);
